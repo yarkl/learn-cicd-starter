@@ -53,8 +53,6 @@ func TestGetAPIKey(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			t.Errorf("Temporarily breaking code")
-
 			key, err := GetAPIKey(tt.headers)
 
 			// Checking key
