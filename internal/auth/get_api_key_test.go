@@ -55,26 +55,26 @@ func TestGetAPIKey(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Errorf("Temporarily breaking code")
 
-			// key, err := GetAPIKey(tt.headers)
+			key, err := GetAPIKey(tt.headers)
 
-			// // Проверяем возвращаемый ключ
-			// if key != tt.expectedKey {
-			// 	t.Errorf("GetAPIKey() key = %v, want %v", key, tt.expectedKey)
-			// }
+			// Checking key
+			if key != tt.expectedKey {
+				t.Errorf("GetAPIKey() key = %v, want %v", key, tt.expectedKey)
+			}
 
-			// // Проверяем ошибки
-			// if tt.expectedError == nil {
-			// 	if err != nil {
-			// 		t.Fatalf("No error expected, got: %v", err)
-			// 	}
-			// } else {
-			// 	if err == nil {
-			// 		t.Fatalf("Expected erorr %v, got nil", tt.expectedError)
-			// 	}
-			// 	if err.Error() != tt.expectedError.Error() {
-			// 		t.Errorf("GetAPIKey() error = %v, want %v", err, tt.expectedError)
-			// 	}
-			// }
+			// Cheking for errors
+			if tt.expectedError == nil {
+				if err != nil {
+					t.Fatalf("No error expected, got: %v", err)
+				}
+			} else {
+				if err == nil {
+					t.Fatalf("Expected erorr %v, got nil", tt.expectedError)
+				}
+				if err.Error() != tt.expectedError.Error() {
+					t.Errorf("GetAPIKey() error = %v, want %v", err, tt.expectedError)
+				}
+			}
 		})
 	}
 }
